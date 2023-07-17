@@ -1,5 +1,6 @@
-#Author: James Romeo Gaspar
-
+#Author : James Romeo Gaspar
+#OG 1.0 28Feb2023
+#Revision 2.0 29Jun2023 : Added Last successful checkin Date/Time ; Force checkin
 $XDRsnifferUn = Get-ItemProperty HKLM:\Software\Microsoft\Windows\CurrentVersion\Uninstall\* | Where-Object DisplayName -like "*Cortex XDR*" | Select-Object -First 1 DisplayVersion, InstallDate
 $XDRsnifferDeux = Get-WmiObject -Class Win32_Product | where Name -like '*Cortex XDR*' | select -First 1 Version, InstallDate
 $service = Get-Service -Name cyserver -ErrorAction SilentlyContinue
